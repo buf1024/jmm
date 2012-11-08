@@ -208,7 +208,7 @@ static void __dummy_sort_test(__dummy_test_case_t*** test)
         int j = 0;
         while ((tc = gtc[j++]) != NULL ) {
             printf("TF: %s, TC: %s\n", tc->fxt_name, tc->tc_name);
-
+            cur_grp = grps;
             if (cur_grp == NULL ) {
                 __dummy_group_tests_t* g_item = (__dummy_group_tests_t*)malloc(sizeof(*g_item));
 
@@ -219,40 +219,35 @@ static void __dummy_sort_test(__dummy_test_case_t*** test)
                 __dummy_the_test = g_item;
                 cur_grp = g_item;
 
-            }
-
-            __dummy_group_tests_t* cur_suite = __dummy_the_test;
-            __dummy_group_test_t* cur_grp = cur_suite.gtc;
-            if(cur_grp == NULL){
-                __dummy_group_test_t* g_item = (__dummy_group_test_t*)malloc(sizeof(*g_item));
-
-                g_item->tc = NULL;
-                g_item->next_tc = NULL;
-
-                strcpy(cur_suite->fxt_name, tc->fxt_name);
-
-                cur_suite->gtc = g_item;
-
             }else{
-                __dummy_group_tests_t* pre_suite = NULL;
-                while(cur_suite){
-                    if(strcmp(cur_suite->fxt_name, tc->fxt_name) != 0){
-                        pre_suite = cur_suite;
-                        cur_suite = cur_suite->next_gtc;
+                while(cur_grp){
+                    int cmp = strcmp(cur_grp->fxt_name, tc->fxt_name);
+                    if(cmp != 0){
+                        pre_grp = cur_grp;
+                        cur_grp = cur_grp->next_gtc;
+                    }else{
+                        break;
                     }
                 }
-                if(cur_suite != NULL){
-                    cur_grp = cur_suite->gtc;
-                } else {
-                    __dummy_group_test_t* g_item = (__dummy_group_test_t*)malloc(sizeof(*g_item));
+                if(!cur_grp){
+                    __dummy_group_tests_t* g_item = (__dummy_group_tests_t*)malloc(sizeof(*g_item));
 
-                    g_item->tc = NULL;
-                    g_item->next_tc = NULL;
+                    g_item->gtc = NULL;
+                    g_item->next_gtc = NULL;
+                    memset(g_item->fxt_name, 0, sizeof(g_item->fxt_name));
 
-                    strcpy(pre_suite->fxt_name, tc->fxt_name);
-
-                    pre_suite->gtc = g_item;
+                    pre_grp->next_gtc = g_item;
+                    cur_grp = g_item;
                 }
+            }
+
+            __dummy_test_case_t* tc_item = (__dummy_test_case_t*)malloc(sizeof(*tc_item));
+            strcpy(tc_item->fxt_name, tc->fxt_name);
+            strcpy(tc_item->tc_name, tc->tc_name);
+            tc_item->func = tc->func;
+
+            while(){
+
             }
         }
     }
