@@ -30,6 +30,8 @@ static void jmm_uninit_env();
 static void jmm_version();
 static void jmm_usage();
 
+#ifndef __UNIT_TEST__
+
 int main(int argc, char **argv)
 {
     struct event_base* base = NULL;
@@ -148,6 +150,7 @@ int main(int argc, char **argv)
 
 }
 
+#endif
 
 static void jmm_init_env()
 {
