@@ -31,7 +31,6 @@ static void jmm_version();
 static void jmm_usage();
 
 #ifndef __UNIT_TEST__
-
 int main(int argc, char **argv)
 {
     struct event_base* base = NULL;
