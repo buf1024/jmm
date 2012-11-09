@@ -8,6 +8,7 @@
 #ifndef __48SLOTS_JMM_CMMHDR_H__
 #define __48SLOTS_JMM_CMMHDR_H__
 
+#include "log.h"
 #include "jmm_log.h"
 #include <stdio.h>
 #include <stdlib.h>

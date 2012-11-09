@@ -1,12 +1,12 @@
 /*
- * clog.h
+ * log.h
  *
  *  Created on: 2012-5-9
  *      Author: buf1024@gmail.com
  */
 
-#ifndef __48SLOTS_CLOG_H__
-#define __48SLOTS_CLOG_H__
+#ifndef __48SLOTS_LOG_H__
+#define __48SLOTS_LOG_H__
 
 #include <stdarg.h>
 
@@ -115,4 +115,4 @@ int clog_file_log_callback_fun(int loglvl, int reqlvl, const char* format,
         va_list ap, void* args);
 int clog_file_uninit_callback_fun(void* args);
 
-#endif /* __48SLOTS_CLOG_H__ */
+#endif /* __48SLOTS_LOG_H__ */

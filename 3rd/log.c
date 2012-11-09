@@ -1,11 +1,11 @@
 /*
- * clog.c
+ * log.c
  *
  *  Created on: 2012-5-9
  *      Author: buf1024@gmail.com
  */
 
-#include "clog.h"
+#include "log.h"
 #include <stdarg.h>
 #include <stdlib.h>
 #include <string.h>

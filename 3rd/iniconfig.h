@@ -1,12 +1,12 @@
 /*
- * ciniconfig.h
+ * iniconfig.h
  *
  *  Created on: 2012-5-10
  *      Author: buf1024@gmail.com
  */
 
-#ifndef __48SLOTS_CINICONFIG_H__
-#define __48SLOTS_CINICONFIG_H__
+#ifndef __48SLOTS_INICONFIG_H__
+#define __48SLOTS_INICONFIG_H__
 
 #define INI_MAX_NAME_LEN  255
 #define INI_MAX_VALUE_LEN 255
@@ -64,4 +64,4 @@ int init_ini(struct ini_config* ini);
 int uninit_ini(struct ini_config* ini);
 
 
-#endif /* __48SLOTS_CINICONFIG_H__ */
+#endif /* __48SLOTS_INICONFIG_H__ */

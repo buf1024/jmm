@@ -6,7 +6,8 @@
  */
 
 #include "jmm_conf.h"
-#include "ciniconfig.h"
+#include "iniconfig.h"
+#include "log.h"
 
 // read ini macro
 #define JMM_GET_SESSION_MUST(ini, sec, name)                   \

@@ -224,7 +224,6 @@ static void __dummy_sort_test(__dummy_test_case_t*** test)
                     int cmp = strcmp(cur_grp->fxt_name, tc->fxt_name);
                     if(cmp != 0){
                         pre_grp = cur_grp;
-                        cur_grp = cur_grp->next_gtc;
                     }else{
                         break;
                     }
@@ -236,7 +235,6 @@ static void __dummy_sort_test(__dummy_test_case_t*** test)
                     g_item->next_gtc = NULL;
                     memset(g_item->fxt_name, 0, sizeof(g_item->fxt_name));
 
-                    pre_grp->next_gtc = g_item;
                     cur_grp = g_item;
                 }
             }
@@ -246,9 +244,6 @@ static void __dummy_sort_test(__dummy_test_case_t*** test)
             strcpy(tc_item->tc_name, tc->tc_name);
             tc_item->func = tc->func;
 
-            while(){
-
-            }
         }
     }
 

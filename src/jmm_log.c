@@ -5,6 +5,7 @@
  *      Author: buf1024@gmail.com
  */
 
+#include "log.h"
 #include "jmm_cmmhdr.h"
 #include "jmm_conf.h"
 

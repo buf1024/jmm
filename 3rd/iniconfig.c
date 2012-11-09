@@ -1,10 +1,10 @@
 /*
- * ciniconfig.c
+ * iniconfig.c
  *
  *  Created on: 2012-5-10
  *      Author: buf1024@gmail.com
  */
-#include "ciniconfig.h"
+#include "iniconfig.h"
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
